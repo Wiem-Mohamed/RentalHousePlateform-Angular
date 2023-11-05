@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<div class="container">
+  
+  <form class="needs-validation" [formGroup]="formoutput" >
+    <h4>Modifier mon mot de passe</h4>
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationCustom01"  class="label-style">Ancien mot de passe </label>
+        <input type="password" class="form-control" id="validationCustom01" formControlName="actualpass">
+      
+      </div>
+    </div>
+      <div class="alert" *ngIf="this.formoutput.controls['actualpass'].errors?.['required'] && !this.formoutput.controls['actualpass'].pristine ">
+        Ce champ est obligatoire.
+      </div>
+    
+        <div class="alert" *ngIf="this.formoutput.controls['actualpass'].errors?.['minlength']">
+        Le mot de passe doit comporter au moins 6 caractères.
+      </div>
+      <div class="alert" *ngIf="this.actualpass">
+        Ancien mot de passe incorrect.
+      </div>
+    
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationCustom01"  class="label-style">Nouveau mot de passe </label>
+        <input type="password" class="form-control" id="validationCustom01" formControlName="newpass" >
+      
+      </div>
+    </div>
+      <div class="alert" *ngIf="this.formoutput.controls['newpass'].errors?.['required'] && !this.formoutput.controls['newpass'].pristine ">
+        Ce champ est obligatoire.
+      </div>
+      <div class="alert" *ngIf="this.formoutput.controls['newpass'].errors?.['minlength']">
+        Le mot de passe doit comporter au moins 6 caractères.
+      </div>
+    
+    
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationCustom01" class="label-style">Confirmer nouveau mot de passe </label>
+        <input type="password" class="form-control" id="validationCustom01" formControlName="confnewpass">
+      
+      </div>
+    </div>
+      <div class="alert" *ngIf="this.formoutput.controls['confnewpass'].errors?.['required'] && !this.formoutput.controls['confnewpass'].pristine ">
+        Ce champ est obligatoire.
+      </div>
+      <div class="alert" *ngIf="this.formoutput.controls['confnewpass'].errors?.['minlength']">
+        Le mot de passe doit comporter au moins 6 caractères.
+      </div>
+      <div class="alert" *ngIf="this.confpass">
+        Mot de passe incompatible.
+      </div>
+    
+  
+    
+    <button type="button"  class="custom-btn" (click)="newpassword()">Mettre a jour</button>
+    
+  </form>
+  <br>
+
+</div>

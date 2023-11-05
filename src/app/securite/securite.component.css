@@ -1,0 +1,83 @@
+.container{
+
+margin-left: 300px;
+width: 70%;
+height: 100%;
+padding: 120px 60px;
+
+}
+.custom-btn{
+  background-color:#F3AE5F ;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: 'Police1',sans-serif;
+}
+.custom-btn:hover,custom-btn:active{
+  background-color:#D38F5E ;
+  border:solid 2px whitesmoke;
+}
+.custom-btn:focus {
+  outline: none;
+}
+h4{
+  font-family: 'Police1',sans-serif;
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+
+.needs-validation{
+  margin-top: 60px;
+}
+label{
+  font-size: 14px;
+  font-family: 'Police1',sans-serif;
+}
+.alert{
+  color: red;
+  font-size: 14px;
+  height: 10px;
+  font-family: 'Police1',sans-serif;
+
+}
+
+@media  (max-width: 1200px) {
+  .container{
+
+  margin-left: 215px;
+
+  }
+  .form-control{
+    width:300px;
+  }
+}
+@media  (max-width: 700px) {
+  .container{
+
+  margin-left: 120px;
+
+  }
+}
+@media  (max-width: 500px) {
+  .container{
+  margin-left: 50px;
+  }
+  .form-control{
+    width:200px;
+  }
+  .label-style{
+    width:200px;
+  }
+  .custom-btn{
+    height: 50px;
+    padding: 2px;
+    width: 100px;
+  }
+  
+}
+
+
+

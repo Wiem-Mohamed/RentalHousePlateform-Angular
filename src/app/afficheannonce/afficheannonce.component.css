@@ -1,0 +1,259 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+*{
+  
+  font-family: 'Police1',sans serif;
+  letter-spacing: 1px;
+  
+}
+  .container{
+  margin:100px auto;
+  display:flex;
+  height: 110vh;
+  margin-bottom: 200px;
+  
+
+  }
+
+  .images {
+    padding-top: 50px;
+  width:600px;
+
+  }
+  .images{
+    display: flex;
+    flex-direction: column;
+  }
+  .images img  {
+  width:500px;
+  height:500px;
+  } 
+  .gallerie img{
+    width: 120px;
+    height:120px;
+    margin-left: 5px;
+    margin-top: 5px;
+    
+  }
+  .gallerie{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 30px;
+    
+  
+  }
+  
+
+.user-info p{
+font-size: 16px;
+}
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  
+  margin-top: 20px;
+  width:700px;
+  max-height: 80%;
+  margin-left: 25px;
+}
+
+.user {
+  padding-top: 20px;
+  width: 100%;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+
+.user img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.user-details {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0B87BA;
+  text-decoration: none;
+}
+
+.user-announcements {
+  font-size: 14px;
+  color: #666;
+  text-decoration: none;
+}
+
+.user-contact {
+
+  font-size: 14px;
+  color: #666;
+margin-top: 10px;
+
+}
+.phone{
+  display: flex;
+  justify-content: center;
+  margin-right: 25px;
+}
+
+.fa-envelope,.fa-phone,.fa-location-dot {
+  margin-bottom: 18px;
+  margin-right: 8px;
+}
+.fa-phone{
+  margin-top: 13px;
+}
+.annonce {
+  
+  border: 1px solid #ccc;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.annonce h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #0B87BA;
+}
+
+.annonce-price {
+  color: #e74c3c;
+}
+
+
+
+.user-info .annonce-description {
+
+  font-size: 15px;
+  margin-top: 10px;
+  color: #333;
+  max-width: 100%;
+}
+.localisation  {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: #666;
+  margin-top: 5px;
+}
+.fa-envelope:hover{
+  color:#F3AE5F;
+}
+/* media */
+ @media (max-width: 1200px) {
+  .container{
+    height:120vh;
+  }
+
+}
+@media (max-width: 800px) {
+  .container {
+    
+    flex-wrap: wrap;
+    margin: 100px auto 200px auto; 
+    height: 200vh;
+    
+    
+  }
+  .user-info{
+    
+padding-left: 20px;
+
+  }
+  .images{
+    padding-top: 5px;
+    height:50%;
+    margin-bottom: 60px;;
+  }
+  
+.user-info {
+  margin-top: 5px;
+}
+.annonce  {
+  margin:0;
+}
+.user{
+  margin-bottom: 5px;
+}
+.annonce h2{
+  font-size: 20px;
+}
+.annonce-description{
+  font-size: 10px;
+}
+
+}
+@media (max-width: 470px) {
+  .container {
+    
+    height: 260vh;
+    
+    
+  }
+.images{
+  height:800px;
+  margin-bottom: 0;
+}
+.carousel-inner img{
+  height: 250px;
+}
+.user-info{
+  height:1000px;
+  padding: 0;
+  margin-left: 5px;
+}
+.user{
+  margin-top: 100px;
+}} 
+/* model*/
+#exampleModal{
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal-dialog{
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+.modal-body input,.modal-body textarea{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.btn{
+  background-color:#0B87BA;
+  border-radius: 3px;
+}
+.modal-footer{
+  justify-content: center;
+}
+
+.custom-btn:hover {
+background-color: #014D69; 
+}
+/*icon*/
+.icon-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.fa-heart {
+  color: #666;
+  transition: color 0.3s ease; 
+}
+
+.favori-rouge {
+  color: #F3AE5F; 
+}
+

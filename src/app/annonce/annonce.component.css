@@ -1,0 +1,235 @@
+
+@import '~bootstrap/dist/css/bootstrap.css';
+
+.upload-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  
+}
+
+.upload-container img {
+  flex: 1;
+  max-width: 150px; 
+  max-height: 150px; 
+  object-fit: cover;
+}
+
+.upload-container .close-button {
+  background-color: grey;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+
+.upload-container .close-button i {
+  margin-top: 2px; 
+}
+
+h2{
+  font-size: 20px;
+  color:#02315E;
+  font-family: 'Police1',sans serif;
+}
+h3{
+  color: #02315E;
+  font-size: 16px;
+  font-family: 'Police1',sans serif;
+}
+
+
+/*form styles*/
+#msform {
+  width: 800px;
+  margin: 100px auto ;
+  text-align: center;
+  position: relative;
+}
+#msform fieldset {
+  background: white;
+  border: 0 none;
+  border-radius: 3px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  padding: 20px 30px;
+  box-sizing: border-box;
+  width: 80%;
+  margin: 0 10%;
+  height:70%;
+}
+/*Hide all except first fieldset*/
+ #msform fieldset:not(:first-of-type) {
+  display: none;
+}
+/*inputs*/
+#msform input, #msform textarea {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  color: #2C3E50;
+}
+/*buttons*/
+#msform .action-button {
+  width: 100px;
+  background: #D38F5E;
+  color: white;
+  border: 0 none;
+  border-radius: 1px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 10px 5px;
+  text-decoration: none;
+  font-size: 14px;
+}
+#msform .action-button:hover, #msform .action-button:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #D38F5E;
+}
+/*headings*/
+.fs-title {
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #2C3E50;
+  margin-bottom: 10px;
+}
+.fs-subtitle {
+  font-weight: normal;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 20px;
+}
+/*progressbar*/
+#progressbar {
+  margin-bottom: 30px;
+  overflow: hidden;
+  /*CSS counters to number the steps*/
+  counter-reset: step;
+}
+#progressbar li {
+  list-style-type: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 9px;
+  width: 33.33%;
+  float: left;
+  position: relative;
+}
+#progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 40px;
+  height: 40px;
+  line-height: 35px;
+  display: block;
+  font-size: 15px;
+  color:#02315E;
+  background: gainsboro;
+  border-radius: 3px;
+  margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: white;
+  position: absolute;
+  left: -50%;
+  top: 9px;
+  z-index: -1; 
+}
+#progressbar li:first-child:after {
+
+  content: none;
+}
+
+#progressbar li.active:before,  #progressbar li.active:after{
+  background: #02315E;
+  color:white;
+  font-size: 15px;
+}
+.label-style {
+  text-align: left;
+  display: block;
+  margin-bottom: 10px;
+  font-family: 'Police1',sans serif;
+  font-size: 12px;
+}
+.custom-button   {
+  font-family: 'Police1',sans serif;
+  font-size: 10px;
+}
+
+.choix {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.custom-placeholder::placeholder {
+  font-size: 12px; 
+  font-family: 'Police1',sans serif;
+}
+
+
+
+@media screen and (max-width: 815px) {
+  #msform {
+    
+     width: 600px; 
+    
+  }
+  
+}
+@media screen and (max-width: 610px) {
+  #msform {
+  
+     width: 500px; 
+    
+  }
+
+  #msform fieldset{
+    margin:0 0 0 15px;
+    width:90%;
+  }
+  
+}
+
+@media screen and (max-width: 500px) {
+  #msform {
+    
+     width: 370px; 
+    
+  }
+
+  #msform fieldset{
+    
+    width:95%;
+  }
+
+  
+}
+@media screen and (max-width: 390px) {
+  #msform {
+    
+     width: 290px; 
+    
+  }
+  #msform fieldset{
+    margin:auto;
+    width:100%;
+  }
+  
+}

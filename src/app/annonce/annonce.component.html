@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<form id="msform" [formGroup]="annonceForm">
+  <!-- progressbar -->
+  <ul id="progressbar">
+    <li class="active"></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <!-- fieldsets -->
+  <fieldset>
+    <h2 >Déposer votre annonce</h2>
+    <h3 >Etape 1</h3>
+    <input type="text" name="titre" placeholder="Titre" formControlName="titre" class="custom-placeholder"/>
+    <textarea name="description" placeholder="Description" formControlName="description" class="custom-placeholder"></textarea>
+    <input type="disponible" name="cpass" placeholder="Disponible le" formControlName="disponible" class="custom-placeholder"/>
+    <input type="button" name="Suivant" class="next action-button custom-button" value="Suivant"  (click)="onNextClick()"/>
+  </fieldset>
+  <fieldset >
+    <h2 >Déposer votre annonce</h2>
+    <h3 >Etape 2</h3>
+    
+      <label class="label-style"for="choix">Catégorie:</label>
+        <select class="choix" name="choix" formControlName="categorie" >
+          <option *ngFor="let categorie of categories" [value]="categorie">{{ categorie }}</option>
+        </select>
+    
+      
+    
+  
+    
+       <label class="label-style"for="choix" >Gouvernorat:</label>
+        <select  class="choix" name="choix" formControlName="gouvernorat" >
+          <option *ngFor="let gouvernorat of gouvernorats" [value]="gouvernorat">{{ gouvernorat }}</option>
+        </select> 
+        <label class="label-style" for="choix" >Piéces:</label>
+        <select class="choix" name="choix" formControlName="pieces" >
+          <option *ngFor="let piece of nbpieces" [value]="piece">{{ piece }}</option>
+        </select>
+    
+  
+    
+    <input type="button" name="Retour" class="previous action-button custom-button" value="Retour" (click)="onPreviousClick()" />
+    <input type="button" name="Suivant" class="next action-button custom-button" value="Suivant"  (click)="onNextClick()" />
+  </fieldset>
+  
+  <fieldset>
+    <h2 >Déposer votre annonce</h2>
+    <h3 >Etape 3</h3>
+
+    <input type="number"  name="prix" placeholder="Prix en DT" formControlName="prix" class="custom-placeholder">
+
+    <input type="tel"  name="telephone" placeholder="Téléphone" formControlName="telephone" class="custom-placeholder">
+  
+    
+      <div class="upload-container">
+        <input type="file" (change)="onFileSelected($event)" accept="image/*">
+        
+        <div *ngFor="let image of images; let i = index;">
+          <img [src]="image" alt="Uploaded Image">
+          <button type="button" class="close-button" (click)="removeImage(i)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+      
+
+    <input type="button" name="Retour" class="previous action-button custom-button" value="Retour"  (click)="onPreviousClick()"/>
+    <input type="button" name="Deposer" class="previous action-button custom-button" value="Déposer"  (click)="deposerannonce()"/>
+  </fieldset>
+
+</form>
+<app-footer ></app-footer>

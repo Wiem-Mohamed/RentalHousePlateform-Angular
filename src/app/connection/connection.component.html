@@ -1,0 +1,113 @@
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="container">
+  <input type="checkbox" id="flip">
+  <div class="cover">
+    <div class="front">
+      <img class="backImg" src="assets/images/maison.jpg" alt="">
+      <div class="text">
+        <span class="text-1">Bienvenue!</span>
+        
+      </div>
+    </div>
+    <div class="back">
+      <div class="text">
+        <span class="text-1"> Bienvenue !</span>
+      </div>
+    </div>
+  </div>
+  <div class="forms">
+    <div class="form-content">
+      <div class="login-form">
+        <div class="title"> Se Connecter</div>
+        <form action="#" [formGroup]="formoutput">
+          <div class="input-boxes">
+            <div class="input-box">
+              <i class="fas fa-envelope"></i>
+              <input type="text" placeholder="E-mail"  formControlName="email"  class="placeholder-style">
+            </div>
+            <div class="alert" *ngIf="this.formoutput.controls['email'].errors?.['required'] && !this.formoutput.controls['email'].pristine">
+              Ce champ est obligatoire.
+            </div>
+            <div class="alert" *ngIf="this.formoutput.controls['email'].errors?.['email']">
+              Tapez une adresse email valide.
+            </div>
+            <div class="input-box">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Mot de passe" formControlName="password"  class="placeholder-style" >
+            </div>
+              <div class="alert" *ngIf="this.formoutput.controls['password'].errors?.['required'] && !this.formoutput.controls['password'].pristine ">
+                Ce champ est obligatoire.
+              </div>
+              <div class="alert" *ngIf="this.formoutput.controls['password'].errors?.['minlength']">
+                Le mot de passe doit comporter au moins 6 caractères.
+              </div>
+            
+            <div class="text"><a href="#">Mot de passe oublié?</a></div>
+            <div class="alert" *ngIf="usernotfound">
+              Utilisateur n'existe pas ,créer un compte d'abord.
+            </div>
+            <div class="alert" *ngIf="invalidpassword">
+              Mot de passe invalide.
+            </div>
+            <div class="button input-box">
+              <input type="submit" value="Se connecter" (click)="signin()">
+            </div>
+            <div class="text sign-up-text">Vous n'avez pas de compte? <label for="flip">S'inscrire</label></div>
+          </div>
+        </form>
+      </div>
+      <div class="signup-form" >
+        <div class="title">S'inscrire</div>
+        <form action="#" [formGroup]="forminput">
+          <div class="input-boxes">
+            <div class="input-box">
+            
+              <i class="fas fa-user"></i>
+            
+              <input type="text" placeholder="Nom complet" formControlName="name"  class="placeholder-style">
+            </div>
+          
+            <div class="alert" *ngIf="this.forminput.controls['name'].errors?.['required'] && !this.forminput.controls['name'].pristine">
+              Ce champ est obligatoire.
+            </div>
+            <div class="input-box">
+  <i class="fas fa-envelope"></i>
+  <input type="text" placeholder="E-mail" formControlName="email"  class="placeholder-style">
+</div>
+<div class="alert" *ngIf="this.forminput.controls['email'].errors?.['required'] && !this.forminput.controls['email'].pristine">
+  Ce champ est obligatoire.
+</div>
+<div class="alert" *ngIf="this.forminput.controls['email'].errors?.['email']">
+  Tapez une adresse email valide.
+</div>
+
+            <div class="input-box">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Mot de passe" formControlName="password"  class="placeholder-style">
+            </div>
+            <div class="alert" *ngIf="this.forminput.controls['password'].errors?.['required'] && !this.forminput.controls['password'].pristine ">
+              Ce champ est obligatoire.
+            </div>
+            <div class="alert" *ngIf="this.forminput.controls['password'].errors?.['minlength']">
+              Le mot de passe doit comporter au moins 6 caractères.
+            </div>
+            <div class="alerti" *ngIf="comptecree">
+              Compte crée  avec succès.
+              </div>
+              <div class="alert" *ngIf="emailexist">
+                Email déja existe choisir un autre.
+              </div>
+            <div class="button input-box">
+              <input type="submit" value="S'inscrire" (click)="signup()">
+            </div>
+            <div class="text sign-up-text">Vous avez déjà un compte ? <br><label for="flip">Se connecter</label></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+

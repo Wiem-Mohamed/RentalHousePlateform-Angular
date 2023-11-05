@@ -1,0 +1,41 @@
+<div class="search">
+  <form id="msform" [formGroup]="searchForm" >
+    <label class="label-style"for="choix">Catégorie:</label>
+    <select class="choix" name="choix"  formControlName="categorie">
+      <option *ngFor="let categorie of categories" [value]="categorie">{{ categorie }}</option>
+    </select>
+    <label class="label-style"for="choix" >Gouvernorat:</label>
+        <select id="custom-select" class="choix" name="choix" formControlName="gouvernorat" >
+          <option *ngFor="let gouvernorat of gouvernorats" [value]="gouvernorat">{{ gouvernorat }}</option>
+        </select>
+        <input type="number"  name="prix" placeholder="Prix en DT" 
+        class="placeholder-style" formControlName="prix" >
+        <button type="button" (click)="research()">Rechercher</button>
+  </form>
+</div>
+
+<app-home *ngIf="!rechercheEffectuee"></app-home>
+
+<div class="card-container" *ngIf="  rechercheEffectuee && annonces.length >0">
+  <div class="card" *ngFor="let annonce of annonces">
+<figure class="image-block">
+  <h4>il ya {{ calculerPeriode(annonce.dateDepot) }}</h4>
+  <img *ngIf="annonce.images.length > 0" [src]="annonce.images[0]" alt="Image de l'annonce">
+  <figcaption>
+    <h3>
+      {{  annonce.titre}}
+    </h3>
+
+    <p id="paragraphe">{{ annonce.description }}</p>
+    <button (click)="afficherDetails(annonce.id)">
+      plus de détails
+    </button>
+  </figcaption>
+</figure>
+  </div>
+</div>
+<div class="alerts" *ngIf=" rechercheEffectuee && annonces.length === 0" >
+<app-alert> </app-alert>
+
+</div>
+<app-footer *ngIf=" rechercheEffectuee"></app-footer>

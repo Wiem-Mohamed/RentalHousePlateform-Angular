@@ -1,0 +1,40 @@
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' 
+rel='stylesheet'>
+
+<nav nav [class.blur-background]="isConnectionPopupVisible" >
+  <div class="nav-bar">
+    <i class='bx bx-menu sidebarOpen' (click)="toggleSidebar()"></i>
+    <span class="logo navLogo"><a routerLink="home">DarkOm</a></span>
+
+
+    <div class="menu">
+      <div class="logo-toggle">
+        <span class="logo"><a href="#">DarkOm</a></span>
+        
+        <i class='bx bx-x siderbarClose' (click)="closeSidebar()"></i>
+      </div>
+
+      <ul class="nav-links">
+        <li routerLinkActive="active"><a routerLink="home">Acceuil</a></li>
+        <li routerLinkActive="active">
+          <a *ngIf="isConnected(); else notConnectedLink" routerLink="annonce">Déposer une annonce</a>
+          <ng-template #notConnectedLink>
+            <a (click)="toggleConnectionPopup()">Déposer une annonce</a>
+          </ng-template>
+        </li>
+        <li routerLinkActive="active"><a routerLink="profile" *ngIf="isConnected()">Mon espace</a></li>
+        <li routerLinkActive="active"><a (click)="toggleConnectionPopup()" *ngIf="!isConnected()">Se connecter</a></li>
+        <li *ngIf="isConnected()" >
+          <a (click)="logout()" routerLink="home" *ngIf="isConnected()">Se déconnecter</a>
+        </li>
+      </ul>
+    </div>
+
+    
+  </div>
+  <app-connection *ngIf="isConnectionPopupVisible" class="popup" (closePopup)="isConnectionPopupVisible = false" (click)="preventPopupClose($event)"></app-connection>
+
+
+</nav>
+
+

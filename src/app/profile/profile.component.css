@@ -1,0 +1,259 @@
+
+body {
+  margin: 0;
+  background: white;
+}
+.profile{
+  min-height: 100vh;
+}
+
+#nav-toggle:checked ~ #nav-header {
+  width: calc(80px - 16px);
+}
+
+#nav-toggle:checked ~ #nav-content {
+  width: 80px;
+}
+
+#nav-toggle:checked ~ #nav-header #nav-title {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.1s;
+}
+
+#nav-toggle:checked ~ #nav-header label[for="nav-toggle"] {
+  left: calc(50% - 8px);
+  transform: translate(-50%);
+}
+
+#nav-toggle:checked ~ #nav-header #nav-toggle-burger {
+  background: #f5f6fa;
+}
+
+#nav-toggle:checked ~ #nav-header #nav-toggle-burger:before,
+#nav-toggle:checked ~ #nav-header #nav-toggle-burger::after {
+  width: 16px;
+  background: #8392a5;
+  transform: translate(0, 0) rotate(0deg);
+}
+
+#nav-toggle:checked ~ #nav-content .nav-button span {
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+
+#nav-toggle:checked ~ #nav-content .nav-button .fa {
+  min-width: calc(100% - 16px);
+}
+
+#nav-bar {
+  position: absolute; 
+   left: 1vw; 
+   top: 100px;
+  height: 80%;
+  background: #02315E;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  color: #f5f6fa;
+  font-family: 'Police1',sans-serif;
+  overflow: hidden;
+  user-select: none;
+  z-index: 1;
+}
+
+#nav-bar hr {
+  margin: 0;
+  position: relative;
+  left: 16px;
+  width: calc(100% - 32px);
+  border: none;
+  border-top: solid 1px #2c3e50;
+}
+
+#nav-bar a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+#nav-bar input[type="checkbox"] {
+  display: none;
+}
+
+#nav-header {
+  position: relative;
+  width: 256px;
+  left: 16px;
+  width: calc(256px - 16px);
+  min-height: 80px;
+  background: #02315E;
+  border-radius: 16px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  transition: width 0.2s;
+}
+
+#nav-header hr {
+  position: absolute;
+  bottom: 0;
+}
+
+#nav-title {
+  font-size: 1rem;
+  transition: opacity 1s;
+}
+
+label[for="nav-toggle"] {
+  position: absolute;
+  right: 0;
+  width: 3rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#nav-toggle-burger {
+  position: relative;
+  width: 16px;
+  height: 2px;
+  background: #02315E;
+  border-radius: 99px;
+  transition: background 0.2s;
+}
+
+#nav-toggle-burger:before,
+#nav-toggle-burger:after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  width: 10px;
+  height: 2px;
+  background: #f5f6fa;
+  border-radius: 99px;
+  transform: translate(2px, 8px) rotate(30deg);
+  transition: 0.2s;
+}
+
+#nav-toggle-burger:after {
+  top: 6px;
+  transform: translate(2px, -8px) rotate(-30deg);
+}
+
+#nav-content {
+  margin: -16px 0;
+  padding: 16px 0;
+  position: relative;
+  flex: 1;
+  width: 256px;
+  background: #02315E;
+  box-shadow: 0 0 0 16px #02315E;
+  direction: rtl;
+  overflow-x: hidden;
+  transition: width 0.2s;
+}
+
+
+
+#nav-content-highlight {
+  position: absolute;
+  left: 16px;
+  top: -70px;
+  width: calc(100% - 16px);
+  height: 54px;
+  background: white;
+  background-attachment: fixed;
+  border-radius: 16px 0 0 16px;
+  transition: top 0.2s;
+}
+
+#nav-content-highlight:before,
+#nav-content-highlight:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  box-shadow: 16px 16px white;
+}
+
+#nav-content-highlight:after {
+  top: 100%;
+  box-shadow: 16px -16px white;
+}
+
+.nav-button {
+  position: relative;
+  margin-left: 22px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  color: #8392a5;
+  direction: ltr;
+  cursor: pointer;
+  z-index: 1;
+  transition: color 0.2s;
+}
+
+.nav-button span {
+  margin-left: 12px;
+  transition: opacity 1s;
+}
+
+.nav-button .fas {
+  transition: min-width 0.2s;
+}
+
+.nav-button:nth-of-type(1):hover {
+  color:#02315E;
+}
+
+.nav-button:nth-of-type(1):hover ~ #nav-content-highlight {
+  top: 16px;
+}
+
+.nav-button:nth-of-type(2):hover {
+  color: #02315E;
+}
+
+.nav-button:nth-of-type(2):hover ~ #nav-content-highlight {
+  top: 70px;
+}
+
+.nav-button:nth-of-type(3):hover {
+  color: #02315E;
+}
+
+.nav-button:nth-of-type(3):hover ~ #nav-content-highlight {
+  top: 124px;
+}
+
+.nav-button:nth-of-type(4):hover {
+  color: #02315E;
+}
+
+.nav-button:nth-of-type(4):hover ~ #nav-content-highlight {
+  top: 178px;
+}
+
+.nav-button:nth-of-type(5):hover {
+  color:#02315E;
+  
+}
+
+.nav-button:nth-of-type(5):hover ~ #nav-content-highlight {
+  top: 232px;
+}
+
+
+
+
+#nav-bar .fas {
+  min-width: 3rem;
+  text-align: center;
+}
+

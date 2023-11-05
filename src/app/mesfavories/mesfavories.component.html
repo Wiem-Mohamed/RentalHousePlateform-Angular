@@ -1,0 +1,24 @@
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="container">
+  
+    <div class="card-hover" *ngFor="let annonce of annonces"    >
+      <div class="card-hover__content">
+        <p class="card-hover__title">
+          {{annonce.titre}}
+        </p>
+        <div class="description">
+        <p class="card-hover__text"> {{annonce.gouvernorat}},il ya {{ calculerPeriode(annonce.dateDepot) }}</p>
+        
+        <p class="card-hover__text">{{annonce.prix}} Dt</p>
+      </div>
+<div class="links"> 
+  <i id="favor" (click)="supprimerAnnonce(annonce.id)"  class="fa-solid fa-heart fa-xl favorie card-hover__link"></i>
+  <i class="fa-solid fa-arrow-turn-down fa-rotate-270 card-hover__link" (click)="afficherDetails(annonce.id)"></i>
+      
+     </div>
+  
+      </div>
+    <img   *ngIf="annonce.images.length > 0" [src]="annonce.images[0]" alt="Image de l'annonce">
+    
+    </div>
+</div> 

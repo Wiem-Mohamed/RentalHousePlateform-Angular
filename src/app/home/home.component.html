@@ -1,0 +1,28 @@
+
+<div class="card-container" *ngIf="annoncesToShow.length > 0">
+  <div class="card" *ngFor="let annonce of annoncesToShow">
+<figure class="image-block">
+  <h4>il ya {{ calculerPeriode(annonce.dateDepot) }}</h4>
+  <img *ngIf="annonce.images.length > 0" [src]="annonce.images[0]" alt="Image de l'annonce">
+  <figcaption>
+    <h3>
+      {{  annonce.titre}}
+    </h3>
+
+    <p id="paragraphe">{{ annonce.description }}</p>
+    <button (click)="afficherDetails(annonce.id)"  class="custom-button">
+      plus de détails
+    </button>
+  </figcaption>
+</figure>
+  </div>
+</div>
+<div *ngIf="annoncesToShow.length > 0">
+  <div class="encircle bounce animated" *ngIf="afficherBouton" (click)="afficherPlusAnnonces()">
+    <div class="arrow">
+    </div>
+  </div>
+  <app-footer ></app-footer>
+
+</div>
+

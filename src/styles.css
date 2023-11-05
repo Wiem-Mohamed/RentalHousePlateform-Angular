@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Police1';
+  src: url('assets/fonts/FontsFree-Net-Arboria-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Police2';
+  src: url('assets/fonts/Satisfy-Regular.ttf') format('truetype');
+}
+
+body{
+	line-height: 1.5;
+  
+  
+
+}
+*{
+  outline: none;
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+

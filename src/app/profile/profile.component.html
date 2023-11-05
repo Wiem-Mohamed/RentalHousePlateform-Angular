@@ -1,0 +1,30 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="profile">
+<div id="nav-bar">
+  <input id="nav-toggle" type="checkbox" />
+  
+  <div id="nav-header">
+    <a id="nav-title"  >   {{user.name}} </a>
+    <label for="nav-toggle"><span id="nav-toggle-burger"></span></label>
+      <hr />
+  </div>
+  <div id="nav-content">
+      <div class="nav-button" routerLinkActive="active"><a (click)="afficherInfos()"><i class="fa-regular fa-user"></i><span>Mes informations</span></a></div>
+      <div class="nav-button" routerLinkActive="active"><a (click)="afficherAnnonces()"><i class="fa-solid fa-rectangle-list"></i><span>Mes annonces</span></a></div>
+      <div class="nav-button" routerLinkActive="active"><a (click)="afficherFavories()"><i class="fa-solid fa-heart"></i><span>Mes favoris</span></a></div>
+  
+      <div class="nav-button" routerLinkActive="active"><a (click)="afficherSecurite()"><i class="fa-solid fa-lock" ></i><span> Sécurité</span></a></div>
+      <div class="nav-button" ><a (click)="logout()"><i class="fa-solid fa-right-from-bracket fa-flip-both"></i><span>Se déconnecter</span></a></div>
+    
+      
+      
+      <div id="nav-content-highlight"></div>
+  </div>
+  
+</div>
+<div class="home">
+  <ng-container *ngComponentOutlet="selectedComponent"></ng-container>
+</div>
+</div>
+<app-footer></app-footer>

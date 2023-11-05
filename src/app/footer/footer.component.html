@@ -1,0 +1,50 @@
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+<body>
+  
+<footer class="footer" [class.blur-background]="isConnectionPopupVisible">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <h4>Contactez Nous</h4>
+        <p>Parc Technologique El Ghazela</p>
+        <p>+216 58 00 84 64 </p>
+        <p>admin@darkom.tn</p>
+
+      </div>
+
+      <div class="footer-col">
+        <h4>Liens Utiles</h4>
+        <ul>
+          <li><a routerLink="/home">Acceuil</a></li>
+          <li>
+            <a *ngIf="isConnected(); else notConnectedLink" routerLink="/annonce">Publier une annonce</a>
+            <ng-template #notConnectedLink>
+              <a (click)="toggleConnectionPopup()">Publier une annonce</a>
+            </ng-template>
+          </li>
+          <li>
+            <a *ngIf="isConnected()" routerLink="/profile">Mon espace</a>
+          </li>
+          <li><a routerLink="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <div class="subscribe-form">
+          <form action="#">
+            <input type="text" placeholder="Email ...">
+            <button><i class="fab fa-telegram-plane"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-connection *ngIf="isConnectionPopupVisible" class="popup" (closePopup)="isConnectionPopupVisible = false" (click)="preventPopupClose($event)"></app-connection>
+</footer>
+
+</body>
+
+
+

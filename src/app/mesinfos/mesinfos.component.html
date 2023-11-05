@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<div class="container">
+  
+  <form class="needs-validation" [formGroup]="formoutput">
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationCustom01">Nom complet</label>
+        <input type="text" class="form-control" id="validationCustom01" placeholder="Nom complet" [(ngModel)]="user.name" formControlName="name">
+        <div class="alerti" *ngIf="this.formoutput.controls['name'].errors?.['required'] && !this.formoutput.controls['name'].pristine">
+          choisir un nom s'il vous plait!
+        </div>
+      </div>
+
+    
+    </div>
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationCustomUsername" >E-mail</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupPrepend">@</span>
+          </div>
+          <input type="text" class="form-control" id="validationCustomUsername" placeholder="E-mail" value="{{user.email}}" aria-describedby="inputGroupPrepend" formControlName="email" [(ngModel)]="user.email">
+          <div class="alerti" *ngIf="this.formoutput.controls['email'].errors?.['required'] && !this.formoutput.controls['email'].pristine">
+            choisir un e-mail s'il vous plait!
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    <button (click)="modifier()" type="button"  class="custom-btn">Mettre a jour</button>
+    
+  </form>
+  <br>
+<div class="supression">
+  <h4>Supprimer le compte </h4>
+  <div class="alert alert-danger" role="alert">
+    En effectuant cette action votre compte et vos annonces seront supprimées définitivement !
+  </div>
+  <br>
+  
+  <i class="fa-solid fa-trash fa-2xl" style="color: #f3ae5f; cursor: pointer;" (click)="deleteAccount()"></i>
+</div>
+</div>
