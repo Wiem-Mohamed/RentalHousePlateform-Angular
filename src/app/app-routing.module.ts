@@ -18,6 +18,7 @@ const routes: Routes = [
 {path: 'annonce/:id', component:  AfficheannonceComponent ,canActivate:[AuthGuard]},
 {path: 'profile', component:  ProfileComponent ,canActivate:[AuthGuard]},
 {path: 'annonceup/:id', component:  AnnonceupComponent ,canActivate:[AuthGuard]},
+  { path: '**', component: GeneralhomeComponent } 
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
